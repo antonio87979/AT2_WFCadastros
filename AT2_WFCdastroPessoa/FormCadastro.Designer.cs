@@ -106,10 +106,13 @@
             // ckbFilhos
             // 
             ckbFilhos.AutoSize = true;
+            ckbFilhos.Checked = true;
+            ckbFilhos.CheckState = CheckState.Indeterminate;
             ckbFilhos.Location = new Point(20, 291);
             ckbFilhos.Name = "ckbFilhos";
+            ckbFilhos.RightToLeft = RightToLeft.No;
             ckbFilhos.Size = new Size(99, 19);
-            ckbFilhos.TabIndex = 6;
+            ckbFilhos.TabIndex = 7;
             ckbFilhos.Text = "Possui Filhos?";
             ckbFilhos.UseVisualStyleBackColor = true;
             // 
@@ -118,7 +121,7 @@
             BtnSalvar.Location = new Point(195, 338);
             BtnSalvar.Name = "BtnSalvar";
             BtnSalvar.Size = new Size(85, 35);
-            BtnSalvar.TabIndex = 7;
+            BtnSalvar.TabIndex = 8;
             BtnSalvar.Text = "Salvar";
             BtnSalvar.UseVisualStyleBackColor = true;
             BtnSalvar.Click += BtnSalvar_Click;
@@ -128,7 +131,7 @@
             btnVoltar.Location = new Point(81, 338);
             btnVoltar.Name = "btnVoltar";
             btnVoltar.Size = new Size(88, 35);
-            btnVoltar.TabIndex = 8;
+            btnVoltar.TabIndex = 9;
             btnVoltar.Text = "Voltar";
             btnVoltar.UseVisualStyleBackColor = true;
             btnVoltar.Click += btnVoltar_Click;
@@ -142,7 +145,7 @@
             gbxTipoTelefone.Location = new Point(202, 201);
             gbxTipoTelefone.Name = "gbxTipoTelefone";
             gbxTipoTelefone.Size = new Size(99, 100);
-            gbxTipoTelefone.TabIndex = 9;
+            gbxTipoTelefone.TabIndex = 6;
             gbxTipoTelefone.TabStop = false;
             // 
             // rdbPessoal
@@ -151,7 +154,7 @@
             rdbPessoal.Location = new Point(6, 25);
             rdbPessoal.Name = "rdbPessoal";
             rdbPessoal.Size = new Size(65, 19);
-            rdbPessoal.TabIndex = 10;
+            rdbPessoal.TabIndex = 0;
             rdbPessoal.TabStop = true;
             rdbPessoal.Text = "Pessoal";
             rdbPessoal.UseVisualStyleBackColor = true;
@@ -162,7 +165,7 @@
             rdbComercial.Location = new Point(6, 50);
             rdbComercial.Name = "rdbComercial";
             rdbComercial.Size = new Size(80, 19);
-            rdbComercial.TabIndex = 11;
+            rdbComercial.TabIndex = 1;
             rdbComercial.TabStop = true;
             rdbComercial.Text = "Comercial";
             rdbComercial.UseVisualStyleBackColor = true;
@@ -173,7 +176,7 @@
             rdbRecado.Location = new Point(6, 75);
             rdbRecado.Name = "rdbRecado";
             rdbRecado.Size = new Size(66, 19);
-            rdbRecado.TabIndex = 12;
+            rdbRecado.TabIndex = 2;
             rdbRecado.TabStop = true;
             rdbRecado.Text = "Recado";
             rdbRecado.UseVisualStyleBackColor = true;
@@ -184,28 +187,28 @@
             mtbDdd.Mask = "(99) 00000-0000";
             mtbDdd.Name = "mtbDdd";
             mtbDdd.Size = new Size(100, 23);
-            mtbDdd.TabIndex = 13;
+            mtbDdd.TabIndex = 5;
             // 
             // txtEmail
             // 
             txtEmail.Location = new Point(20, 152);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(260, 23);
-            txtEmail.TabIndex = 14;
+            txtEmail.TabIndex = 4;
             // 
             // txtNomeCompleto
             // 
             txtNomeCompleto.Location = new Point(20, 99);
             txtNomeCompleto.Name = "txtNomeCompleto";
             txtNomeCompleto.Size = new Size(256, 23);
-            txtNomeCompleto.TabIndex = 15;
+            txtNomeCompleto.TabIndex = 3;
             // 
             // txtCodigo
             // 
             txtCodigo.Location = new Point(20, 40);
             txtCodigo.Name = "txtCodigo";
             txtCodigo.Size = new Size(111, 23);
-            txtCodigo.TabIndex = 16;
+            txtCodigo.TabIndex = 1;
             // 
             // mtbCpf
             // 
@@ -213,7 +216,8 @@
             mtbCpf.Mask = "000.000.000-00";
             mtbCpf.Name = "mtbCpf";
             mtbCpf.Size = new Size(116, 23);
-            mtbCpf.TabIndex = 17;
+            mtbCpf.TabIndex = 2;
+            mtbCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // FormCadastro
             // 

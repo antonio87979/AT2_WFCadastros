@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -33,6 +34,10 @@ namespace AT2_WFCadastroPessoa
             mtbCpf.Clear();
             txtNomeCompleto.Clear();
             txtEmail.Clear();
+            rdbComercial.Checked = false;
+            rdbPessoal.Checked = false;
+            rdbRecado.Checked = false;
+            ckbFilhos.CheckState = CheckState.Indeterminate;
 
         }
 
@@ -47,10 +52,17 @@ namespace AT2_WFCadastroPessoa
                 .Replace("(", "")
                 .Replace(")", "")
                 .Replace(" ", "")
-                .Replace("-", "");
+                .Replace("-", "");           
 
             //Verifica
-            if (string.IsNullOrEmpty(txtCodigo.Text))
+            if (string.IsNullOrEmpty(mtbCpf.Text))
+            {
+                Erro("Campo CPF não pode estar Vazio!");
+                return;
+            }
+
+            //Verifica
+            else if (string.IsNullOrEmpty(txtCodigo.Text))
             {
                 Erro("Campo Codigo não pode estar Vazio!");
                 return;
@@ -68,26 +80,12 @@ namespace AT2_WFCadastroPessoa
             {
                 Erro("Campo Nome Completo não pode estar Vazio!");
                 return;
-            }
-            
-            //Verifica
-            else if (string.IsNullOrEmpty(mtbCpf.Text))
-            {
-                Erro("Campo CPF não pode estar Vazio!");
-                return;
-            }
-
-            
+            }                        
 
             else if (string.IsNullOrEmpty(semMaskTelefone))
             {
                 Erro("Campo DDD/Celular não pode estar Vazio!");
                 return;
-            }
-
-            if (ckbFilhos.CheckState == CheckState.Unchecked && ckbFilhos.CheckState == CheckState.Unchecked)
-            {
-
             }
 
                 ETipoTelefone tipoTelefone;
@@ -107,16 +105,26 @@ namespace AT2_WFCadastroPessoa
                     tipoTelefone = ETipoTelefone.Recado;
             }
 
+            foreach (Pessoas pr in Pessoas.ListaPessoas)
+            {
+                if (txtCodigo.Text == pr.Codigo.ToString())
+                {
+                    {
+                        Erro("Código já cadastrado!");
+                        txtCodigo.Clear();
+                        return;
+                    }
+                }
+            }
+
             Pessoas p1 = new Pessoas();
-            p1.Codigo = 0;
+            p1.Codigo = Convert.ToInt32(txtCodigo.Text);
             p1.NomeCompleto = txtNomeCompleto.Text;
             p1.Cpf = mtbCpf.Text;
             p1.Email = txtEmail.Text;
             p1.TipoTelefone = tipoTelefone;
             p1.Ddd = semMaskTelefone.Substring(0, 2);
             p1.Celular = semMaskTelefone.Substring(2);
-
-            Pessoas.ListaPessoas.Add(p1);
 
             if (ckbFilhos.CheckState == CheckState.Checked)
             {
@@ -132,7 +140,11 @@ namespace AT2_WFCadastroPessoa
                 return;
             }
 
-            
+            Sucesso("Cadastrado com sucesso!");
+
+            Pessoas.ListaPessoas.Add(p1);
+
+
         }
     }
 }
