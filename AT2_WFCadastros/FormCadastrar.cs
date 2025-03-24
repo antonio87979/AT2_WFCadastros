@@ -82,7 +82,17 @@ namespace AT2_WFCadastros
                     Status = EStatus.Inativo;
             }
 
-           
+            foreach (Categoria ca in Categoria.ListaCategorias)
+            {
+                if (txtCodigo.Text == ca.Codigo.ToString())
+                {
+                    {
+                        Erro("Código já cadastrado!");
+                        txtCodigo.Clear();
+                        return;
+                    }
+                }
+            }
 
             Categoria cat = new Categoria();
             cat.Codigo = Convert.ToInt32(txtCodigo.Text);
@@ -91,8 +101,10 @@ namespace AT2_WFCadastros
             cat.Status = Status;
             cat.Observacao = txtObservacao.Text;
 
-            Categoria.ListaCategorias.Add(cat);
             Sucesso("Categoria Cadastrada com sucesso!");
+
+            Categoria.ListaCategorias.Add(cat);
+            
 
             LimparFormulario();
 
