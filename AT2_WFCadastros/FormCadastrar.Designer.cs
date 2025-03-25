@@ -85,14 +85,14 @@
             txtCodigo.Location = new Point(213, 61);
             txtCodigo.Name = "txtCodigo";
             txtCodigo.Size = new Size(100, 23);
-            txtCodigo.TabIndex = 4;
+            txtCodigo.TabIndex = 2;
             // 
             // txtNomeCategoria
             // 
             txtNomeCategoria.Location = new Point(33, 61);
             txtNomeCategoria.Name = "txtNomeCategoria";
             txtNomeCategoria.Size = new Size(151, 23);
-            txtNomeCategoria.TabIndex = 5;
+            txtNomeCategoria.TabIndex = 1;
             // 
             // txtObservacao
             // 
@@ -100,7 +100,7 @@
             txtObservacao.Multiline = true;
             txtObservacao.Name = "txtObservacao";
             txtObservacao.Size = new Size(290, 91);
-            txtObservacao.TabIndex = 6;
+            txtObservacao.TabIndex = 5;
             // 
             // lblDataCadastro
             // 
@@ -117,7 +117,7 @@
             dtpDataCadastro.Location = new Point(33, 118);
             dtpDataCadastro.Name = "dtpDataCadastro";
             dtpDataCadastro.Size = new Size(100, 23);
-            dtpDataCadastro.TabIndex = 8;
+            dtpDataCadastro.TabIndex = 3;
             // 
             // rdbAtivo
             // 
@@ -125,7 +125,7 @@
             rdbAtivo.Location = new Point(6, 12);
             rdbAtivo.Name = "rdbAtivo";
             rdbAtivo.Size = new Size(55, 19);
-            rdbAtivo.TabIndex = 9;
+            rdbAtivo.TabIndex = 0;
             rdbAtivo.TabStop = true;
             rdbAtivo.Text = "Ativo";
             rdbAtivo.UseVisualStyleBackColor = true;
@@ -136,7 +136,7 @@
             rdbInativo.Location = new Point(75, 12);
             rdbInativo.Name = "rdbInativo";
             rdbInativo.Size = new Size(64, 19);
-            rdbInativo.TabIndex = 10;
+            rdbInativo.TabIndex = 1;
             rdbInativo.TabStop = true;
             rdbInativo.Text = "Inativo";
             rdbInativo.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@
             gbxStatus.Location = new Point(181, 110);
             gbxStatus.Name = "gbxStatus";
             gbxStatus.Size = new Size(145, 31);
-            gbxStatus.TabIndex = 11;
+            gbxStatus.TabIndex = 4;
             gbxStatus.TabStop = false;
             // 
             // btnSalvar
@@ -157,7 +157,7 @@
             btnSalvar.Location = new Point(213, 287);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(110, 30);
-            btnSalvar.TabIndex = 12;
+            btnSalvar.TabIndex = 6;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
             btnSalvar.Click += btnSalvar_Click;
