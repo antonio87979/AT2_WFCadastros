@@ -54,28 +54,24 @@ namespace AT2_WFCadastroPessoa
                 .Replace(" ", "")
                 .Replace("-", "");           
 
-            //Verifica
             if (string.IsNullOrEmpty(mtbCpf.Text))
             {
                 Erro("Campo CPF não pode estar Vazio!");
                 return;
             }
-
-            //Verifica
+          
             else if (string.IsNullOrEmpty(txtCodigo.Text))
             {
                 Erro("Campo Codigo não pode estar Vazio!");
                 return;
             }
 
-            //Verifica
             else if (string.IsNullOrEmpty(txtEmail.Text))
             {
                 Erro("Campo Email não pode estar Vazio!");
                 return;
             }
             
-            //Verifica
             else if (string.IsNullOrEmpty(txtNomeCompleto.Text))
             {
                 Erro("Campo Nome Completo não pode estar Vazio!");
@@ -89,7 +85,6 @@ namespace AT2_WFCadastroPessoa
             }
 
                 ETipoTelefone tipoTelefone;
-            //Se todos os radios estão desmarcados
             if (!rdbComercial.Checked && !rdbPessoal.Checked && !rdbRecado.Checked)
             {
                 Erro("Deve-se marcar uma opção de Tipo de Telefone!");
